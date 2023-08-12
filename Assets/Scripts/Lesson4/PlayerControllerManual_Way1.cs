@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static PlayerControllerManager;
+using static PlayerControllerManager_Way1;
 
-public class PlayerControllerManual : MonoBehaviour
+public class PlayerControllerManual_Way1 : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]

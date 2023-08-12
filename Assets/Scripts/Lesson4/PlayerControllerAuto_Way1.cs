@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static PlayerControllerManager;
-public class PlayerControllerAuto : MonoBehaviour
+using static PlayerControllerManager_Way1;
+public class PlayerControllerAuto_Way1 : MonoBehaviour
 {
     [SerializeField]
     private float speed = 25;
