@@ -19,14 +19,14 @@ public class CarController : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-/*        var angle  = horizontalInput * Vector3.up * rotationSpeed;
-        rb.AddTorque(angle);*/
+        var angle = horizontalInput * Vector3.up * rotationSpeed;
+        rb.AddTorque(angle);
 
         Vector3 movement = transform.forward * verticalInput * speed;
         rb.AddForce(movement);
 
-        Quaternion rotation = Quaternion.Euler(0f, horizontalInput * rotationSpeed * Time.deltaTime, 0f);
-        rb.MoveRotation(rb.rotation * rotation);
+/*        Quaternion rotation = Quaternion.Euler(0f, horizontalInput * rotationSpeed * Time.deltaTime, 0f);
+        rb.MoveRotation(rb.rotation * rotation);*/
 
 
     }

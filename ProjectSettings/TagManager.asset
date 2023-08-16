@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Object
+  - RedFuel
+  - BlueFuel
+  - Gift
+  - UltraGift
+  - Obstacle
   layers:
   - Default
   - TransparentFX
