@@ -68,7 +68,7 @@ public class UIManager : MonoBehaviour
         speed.text = "" + trueSpeed;
 
     }
-    void UpdateLap()
+    void UpdateLap() 
     {
         int lapPlayer = player.GetComponent<InteractionManager>().laps;
         lap.text = "" + lapPlayer;
