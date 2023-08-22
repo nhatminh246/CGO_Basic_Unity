@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Lesson8/GameChooseColor/MenuGame.unity
+    guid: 7c050c0bf809ccf468e1c0400fe5942f
+  - enabled: 1
+    path: Assets/Scenes/Lesson8/GameChooseColor/ChooseColorGame.unity
+    guid: a81e9cde34516b5488b6be5b2ce22cdc
   m_configObjects: {}

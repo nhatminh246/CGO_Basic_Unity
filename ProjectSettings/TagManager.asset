@@ -10,6 +10,7 @@ TagManager:
   - Gift
   - UltraGift
   - Obstacle
+  - Coin
   layers:
   - Default
   - TransparentFX

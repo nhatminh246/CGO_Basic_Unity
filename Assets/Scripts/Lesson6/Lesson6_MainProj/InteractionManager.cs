@@ -10,7 +10,7 @@ public class InteractionManager : MonoBehaviour
     [SerializeField] private int damaged = 0;
     [SerializeField] private int fuel = 0;
     [SerializeField] private int capacity = 100;
-    [SerializeField] private int laps = 0;
+    public int laps = 0;
 
     //private Rigidbody rb;
     public List<GameObject> lstItem = new List<GameObject>();
