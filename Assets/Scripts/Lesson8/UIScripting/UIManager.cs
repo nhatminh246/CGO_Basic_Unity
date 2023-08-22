@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine.SceneManagement;
@@ -7,25 +7,26 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class UIManager : MonoBehaviour
+public class UIManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private GameObject player;
     [SerializeField] private TMP_Text lap, coins, speed;
     [SerializeField] private GameObject pauseMenu;
     private Rigidbody rb;
-/*    private bool moveFoward;
+    private bool moveFoward;
     private bool moveBack;
     private bool moveLeft;
-    private bool moveRight;*/
+    private bool moveRight;
     // Start is called before the first frame update
     void Start()
     {
-/*        rb = player.GetComponent<Rigidbody>();
+        rb = player.GetComponent<Rigidbody>();
         moveFoward = false;
         moveBack = false;
         moveLeft = false;
-        moveRight = false;*/
+        moveRight = false;
     }
 
     // Update is called once per frame
@@ -40,7 +41,7 @@ public class UIManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-/*        Vector3 moveDirection = Vector3.zero;
+        Vector3 moveDirection = Vector3.zero;
 
         if (moveFoward)
             moveDirection += transform.forward;
@@ -52,23 +53,23 @@ public class UIManager : MonoBehaviour
             moveDirection += transform.right;
 
         moveDirection.Normalize();
-        Vector3 moveForceVector = moveDirection * 20f;
-        rb.AddForce(moveForceVector, ForceMode.Force);*/
+        Vector3 moveForceVector = moveDirection * 15f;
+        rb.AddForce(moveForceVector, ForceMode.Force);
     }
     void UpdateCoin()
     {
         CoinCollect coinCollect = player.GetComponent<CoinCollect>();
         int coin = coinCollect.coins;
-        coins.text = ""+coin;
+        coins.text = "" + coin;
     }
     void UpdateSpeed()
     {
         Vector3 speedPlayer = player.GetComponent<Rigidbody>().velocity;
-        double trueSpeed = Math.Round(speedPlayer.magnitude,3);
+        double trueSpeed = Math.Round(speedPlayer.magnitude, 3);
         speed.text = "" + trueSpeed;
 
     }
-    void UpdateLap() 
+    void UpdateLap()
     {
         int lapPlayer = player.GetComponent<InteractionManager>().laps;
         lap.text = "" + lapPlayer;
@@ -78,7 +79,7 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
-        
+
     }
     public void ResumeGame()
     {
@@ -94,7 +95,17 @@ public class UIManager : MonoBehaviour
 
     }
 
-    /*public void OnPointerDown(string direc)
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnPointerDown(string direc)
     {
         switch (direc)
         {
@@ -129,5 +140,5 @@ public class UIManager : MonoBehaviour
                 moveRight = false;
                 break;
         }
-    }*/
+    }
 }
